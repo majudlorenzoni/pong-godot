@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://1fgrmvypn7s1"]
+[gd_scene load_steps=10 format=3 uid="uid://1fgrmvypn7s1"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8nm3h"]
 [ext_resource type="PackedScene" uid="uid://du6udgdmjk3uf" path="res://player.tscn" id="1_wkfop"]
+[ext_resource type="Texture2D" uid="uid://cvxeqeql607n5" path="res://fundo.png" id="2_ebgmg"]
 [ext_resource type="PackedScene" uid="uid://belwrququ77pv" path="res://ball.tscn" id="2_gr7tc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7iglx"]
@@ -22,6 +23,12 @@ font_weight = 800
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8nm3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.788235, 0, 0.960784, 0.266667)
+position = Vector2(581, 325)
+scale = Vector2(0.667824, 0.618519)
+texture = ExtResource("2_ebgmg")
 
 [node name="Top" type="Area2D" parent="."]
 collision_layer = 0
@@ -69,6 +76,8 @@ side = "p2"
 position = Vector2(586, 355)
 
 [node name="Label" type="Label" parent="."]
+modulate = Color(1, 0, 0.141176, 1)
+texture_filter = 5
 offset_left = 334.0
 offset_top = 31.0
 offset_right = 344.0
@@ -78,6 +87,8 @@ theme_override_fonts/font = SubResource("SystemFont_j106p")
 text = "0"
 
 [node name="Label2" type="Label" parent="."]
+modulate = Color(0.992157, 0, 0.0470588, 1)
+texture_filter = 5
 offset_left = 777.0
 offset_top = 28.0
 offset_right = 787.0

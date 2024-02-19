@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://belwrququ77pv"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_hk2cg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vw2e3"]
+[ext_resource type="Texture2D" uid="uid://cpwc60broejnf" path="res://rosa-removebg-preview.png" id="2_1urum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwqs"]
 size = Vector2(50, 47)
@@ -13,10 +12,11 @@ collision_mask = 0
 script = ExtResource("1_hk2cg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4.76837e-07)
-scale = Vector2(50, 47)
-texture = SubResource("PlaceholderTexture2D_vw2e3")
+texture_filter = 4
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.24325, 0.208)
+texture = ExtResource("2_1urum")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_vuwqs")
