@@ -4,6 +4,7 @@ O jogo permite salvar a pontuação dos jogadores. A pontuação é salva em um 
 
 ### Controles
 Jogador 1: W e S para mover a paleta para cima e para baixo.
+
 Jogador 2: I e K para mover a paleta para cima e para baixo.
 
 ![Jogo desenvolvido para a disciplina de Jogos Digitais](jogoAtual.png)
