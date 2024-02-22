@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxmhs2go2aghd"
-path="res://.godot/imported/DDIW217287.png-29c53d1906c50926683916ca53c1ffb0.ctex"
+uid="uid://bcam8g5ng2lvc"
+path="res://.godot/imported/jogoAtual.png-e15901d3cab951935030844a4f9595f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DDIW217287.png"
-dest_files=["res://.godot/imported/DDIW217287.png-29c53d1906c50926683916ca53c1ffb0.ctex"]
+source_file="res://jogoAtual.png"
+dest_files=["res://.godot/imported/jogoAtual.png-e15901d3cab951935030844a4f9595f5.ctex"]
 
 [params]
 

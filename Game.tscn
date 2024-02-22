@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://1fgrmvypn7s1"]
+[gd_scene load_steps=11 format=3 uid="uid://1fgrmvypn7s1"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8nm3h"]
 [ext_resource type="PackedScene" uid="uid://du6udgdmjk3uf" path="res://player.tscn" id="1_wkfop"]
 [ext_resource type="Texture2D" uid="uid://cvxeqeql607n5" path="res://fundo.png" id="2_ebgmg"]
 [ext_resource type="PackedScene" uid="uid://belwrququ77pv" path="res://ball.tscn" id="2_gr7tc"]
+[ext_resource type="Script" path="res://SaverLoader.gd" id="5_kcpgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7iglx"]
 size = Vector2(1176, 87)
@@ -12,7 +13,7 @@ size = Vector2(1176, 87)
 size = Vector2(1165, 96.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlc3i"]
-size = Vector2(716.146, 102.464)
+size = Vector2(697.829, 107.722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06xrp"]
 size = Vector2(680.423, 128.639)
@@ -51,7 +52,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(-46, 332)
+position = Vector2(-43.3309, 341.147)
 rotation = -1.57518
 shape = SubResource("RectangleShape2D_xlc3i")
 
@@ -66,9 +67,11 @@ rotation = -1.58348
 shape = SubResource("RectangleShape2D_06xrp")
 
 [node name="Player" parent="." instance=ExtResource("1_wkfop")]
+unique_name_in_owner = true
 position = Vector2(146, 355)
 
 [node name="Player2" parent="." instance=ExtResource("1_wkfop")]
+unique_name_in_owner = true
 position = Vector2(994, 357)
 side = "p2"
 
@@ -97,7 +100,43 @@ scale = Vector2(9.00462, 5.48325)
 theme_override_fonts/font = SubResource("SystemFont_j106p")
 text = "0"
 
+[node name="Node" type="Node" parent="."]
+
+[node name="SaverLoader" type="Node" parent="Node"]
+unique_name_in_owner = true
+script = ExtResource("5_kcpgy")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 230.0
+offset_right = 77.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
+localize_numeral_system = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Salvar"
+
+[node name="LoadButton" type="Button" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Carregar"
+
 [connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
 [connection signal="body_entered" from="Botton" to="." method="_on_botton_body_entered"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
 [connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/SaveButton" to="Node/SaverLoader" method="_on_save_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/HBoxContainer/LoadButton" to="Node/SaverLoader" method="_on_load_button_pressed"]

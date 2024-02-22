@@ -23,5 +23,3 @@ func _on_right_body_entered(body):
 	e.global_position = Vector2(576,320)
 	add_child(e)
 	Main.p1_score += 1
-
-
